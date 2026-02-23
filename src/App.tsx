@@ -14,6 +14,7 @@ import Checkout from "./pages/Checkout";
 import Wishlist from "./pages/Wishlist";
 import Stories from "./pages/Stories";
 import Profile from "./pages/Profile";
+import ProfileSettings from "./pages/ProfileSettings";
 import Orders from "./pages/Orders";
 import Notifications from "./pages/Notifications";
 import Login from "./pages/Login";
@@ -43,6 +44,7 @@ const App = () => (
               <Route path="/wishlist" element={<Wishlist />} />
               <Route path="/stories" element={<Stories />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/profile/settings" element={<ProfileSettings />} />
               <Route path="/orders" element={<Orders />} />
               <Route path="/notifications" element={<Notifications />} />
               <Route path="/login" element={<Login />} />
