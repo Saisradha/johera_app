@@ -1,0 +1,7 @@
+const Checkout = () => (
+  <div className="animate-fade-in px-4 py-6">
+    <h1 className="font-display text-2xl font-bold mb-4">Checkout</h1>
+    <p className="text-muted-foreground font-body text-sm">Checkout flow coming soon.</p>
+  </div>
+);
+export default Checkout;
