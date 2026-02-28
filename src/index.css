@@ -4,54 +4,54 @@
 
 @layer base {
   :root {
-    /* JOHERA Brand Design System */
-    --background: 0 0% 100%;
-    --foreground: 220 20% 20%;
+    /* Johera.in-inspired light theme */
+    --background: 34 75% 90%;          /* warm cream */
+    --foreground: 25 35% 28%;          /* main text brown */
 
-    --card: 0 0% 100%;
-    --card-foreground: 220 20% 20%;
+    --card: 34 75% 95%;
+    --card-foreground: 25 35% 28%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 20%;
+    --popover: 34 75% 95%;
+    --popover-foreground: 25 35% 28%;
 
-    /* Deep Royal Purple */
-    --primary: 263 53% 52%;
+    /* Primary = rich brown (buttons, accents) */
+    --primary: 25 46% 38%;
     --primary-foreground: 0 0% 100%;
 
-    /* Warm Gold */
-    --secondary: 40 96% 51%;
-    --secondary-foreground: 0 0% 100%;
+    /* Secondary = lighter sand */
+    --secondary: 34 60% 80%;
+    --secondary-foreground: 25 40% 25%;
 
-    /* Soft Rose Gold / Lavender Tint */
-    --muted: 270 100% 97%;
-    --muted-foreground: 220 10% 46%;
+    /* Muted / accent surfaces */
+    --muted: 34 55% 88%;
+    --muted-foreground: 25 20% 40%;
 
-    --accent: 270 100% 97%;
-    --accent-foreground: 263 53% 52%;
+    --accent: 34 55% 88%;
+    --accent-foreground: 25 40% 30%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 263 53% 52%;
+    --border: 34 40% 82%;
+    --input: 34 40% 82%;
+    --ring: 25 46% 38%;
 
     --radius: 0.75rem;
 
-    /* Custom brand tokens */
-    --gold: 40 96% 51%;
-    --gold-foreground: 30 60% 12%;
-    --charcoal: 220 20% 20%;
-    --rose-gold: 270 100% 97%;
+    /* Extra brand tokens */
+    --gold: 38 80% 60%;
+    --gold-foreground: 25 40% 20%;
+    --charcoal: 25 35% 18%;
+    --rose-gold: 18 45% 78%;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 263 53% 52%;
+    --sidebar-background: 34 75% 90%;
+    --sidebar-foreground: 25 35% 28%;
+    --sidebar-primary: 25 46% 38%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 270 100% 97%;
-    --sidebar-accent-foreground: 263 53% 40%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 263 53% 52%;
+    --sidebar-accent: 34 55% 88%;
+    --sidebar-accent-foreground: 25 40% 30%;
+    --sidebar-border: 34 40% 82%;
+    --sidebar-ring: 25 46% 38%;
   }
 
   .dark {

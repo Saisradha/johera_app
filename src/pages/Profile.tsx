@@ -1,12 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import { ChevronRight, Package, MapPin, CreditCard, Settings, HelpCircle, LogOut } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
-import { useQuery } from "@tanstack/react-query";
-import { supabase } from "@/integrations/supabase/client";
-import type { Tables } from "@/integrations/supabase/types";
 import { Button } from "@/components/ui/button";
-
-type ProfileRow = Tables<"profiles">;
+import { useProfile } from "@/hooks/useProfile";
 
 const menuItems = [
   { label: "Orders", icon: Package, to: "/orders" },
@@ -19,21 +15,7 @@ const menuItems = [
 const Profile = () => {
   const { user, signOut } = useAuth();
   const navigate = useNavigate();
-
-  const { data: profile } = useQuery<ProfileRow | null>({
-    queryKey: ["profile", user?.id],
-    enabled: !!user,
-    queryFn: async () => {
-      const { data, error } = await supabase
-        .from("profiles")
-        .select("*")
-        .eq("id", user!.id)
-        .maybeSingle();
-
-      if (error) throw error;
-      return data;
-    },
-  });
+  const { data: profile } = useProfile();
 
   if (!user) {
     return (
@@ -54,10 +36,18 @@ const Profile = () => {
   return (
     <div className="animate-fade-in px-4 py-6">
       <div className="flex flex-col items-center mb-8">
-        <div className="h-20 w-20 rounded-full bg-primary/10 flex items-center justify-center mb-3">
-          <span className="font-display text-2xl text-primary">
-            {profile?.full_name?.[0]?.toUpperCase() ?? user.email?.[0]?.toUpperCase() ?? "U"}
-          </span>
+        <div className="h-20 w-20 rounded-full bg-primary/10 flex items-center justify-center mb-3 overflow-hidden">
+          {profile?.avatar_url ? (
+            <img
+              src={profile.avatar_url}
+              alt={profile.full_name ?? user.email ?? "User avatar"}
+              className="h-full w-full object-cover"
+            />
+          ) : (
+            <span className="font-display text-2xl text-primary">
+              {(profile?.full_name?.[0] ?? user.email?.[0] ?? "U").toUpperCase()}
+            </span>
+          )}
         </div>
         <h1 className="font-display text-xl font-bold">
           {profile?.full_name || user.email}
