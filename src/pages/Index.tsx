@@ -160,6 +160,21 @@ const Index = () => {
               Explore
             </Link>
           </div>
+
+          <div className="flex items-center justify-between rounded-2xl bg-primary/10 px-5 py-4 border border-primary/20">
+            <div>
+              <h3 className="font-display text-sm font-semibold">
+                Co-creators
+              </h3>
+              <p className="text-xs text-muted-foreground">Sketch & sell your designs</p>
+            </div>
+            <Link
+              to="/co-creators"
+              className="text-xs font-medium text-primary underline-offset-2 hover:underline"
+            >
+              Create
+            </Link>
+          </div>
         </div>
       </section>
 

@@ -257,6 +257,80 @@ export type Database = {
           },
         ]
       }
+      user_subscriptions: {
+        Row: {
+          id: string
+          user_id: string
+          plan: string
+          status: string
+          starts_at: string
+          expires_at: string
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          plan?: string
+          status?: string
+          starts_at?: string
+          expires_at: string
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          plan?: string
+          status?: string
+          starts_at?: string
+          expires_at?: string
+          created_at?: string
+        }
+        Relationships: []
+      }
+      co_creator_designs: {
+        Row: {
+          id: string
+          user_id: string
+          title: string | null
+          image_url: string
+          source: string
+          status: string
+          product_id: string | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          title?: string | null
+          image_url: string
+          source: string
+          status?: string
+          product_id?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          title?: string | null
+          image_url?: string
+          source?: string
+          status?: string
+          product_id?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "co_creator_designs_product_id_fkey",
+            columns: ["product_id"],
+            isOneToOne: false,
+            referencedRelation: "products",
+            referencedColumns: ["id"],
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
